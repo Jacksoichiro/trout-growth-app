@@ -6,7 +6,18 @@ from scipy.optimize import curve_fit
 import matplotlib
 matplotlib.rcParams['font.family'] = 'Arial'
 
-st.markdown("<h1>トラウト成長予測<span style='font-size:22px;'>(GompertzいわきRASモデル)</span></h1>", unsafe_allow_html=True)
+st.markdown("""
+<style>
+h1 {
+  font-size:26px !important;
+  margin-bottom: 0.5rem;
+}
+h1 span {
+  font-size:16px !important;
+}
+</style>
+<h1>トラウト成長予測<span>(GompertzいわきRASモデル)</span></h1>
+""", unsafe_allow_html=True)
 
 @st.cache_data
 def load_data():
@@ -118,4 +129,4 @@ ax.set_xlabel("Days")
 ax.set_ylabel("Weight (g)")
 ax.legend()
 ax.grid(True)
-st.pyplot(fig)
+st.pyplot(fig, use_container_width=True)
